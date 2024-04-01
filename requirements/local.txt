@@ -1,0 +1,4 @@
+-r testing.txt
+
+ipython==8.22.2
+flake8==7.0.0
