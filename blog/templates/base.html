@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="nachopro">
+    <meta name="description" content="{% block meta_description %}Artículos que a nadie le importan desde 2004{% endblock %}">
+    <title>{% block title %}nachopro{% endblock %}</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Blog</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="acerca.html">Acerca de</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <main>{% block main %}{% endblock %}</main>
+
+    <footer>
+      <p>2004-2024 nachopro</p>
+    </footer>
+
+  </body>
+</html>

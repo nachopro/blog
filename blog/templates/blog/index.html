@@ -1,39 +1,14 @@
-<!doctype html>
-<html lang="es-AR">
-  <head>
-    <meta charset="utf-8">
-    <meta name="author" content="nachopro">
-    <meta name="description" content="El blog de nachopro. Artículos que a nadie le importan desde 2004">
-    <title>nachopro :: </title>
-  </head>
+{% extends "base.html" %}
 
-  <body>
-    <header>
-      <h1>Blog</h1>
-    </header>
+{% block title %}nachopro :: Blog{% endblock %}
 
-    <nav>
-      <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="acerca.html">Acerca de</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-
-    <main>
+{% block main %}
       {% for article in articles %}
       <article>
-        <h2>{{ article.title }}</h2>
+        <h2>{{ article.title }}i</h2>
         <p>{{ article.created_at }}</p>
         <p>{{ article.content }}</p>
         <a href="/{{ article.slug }}/">Leer más</a>
       </article>
       {% endfor %}
-    </main>
-
-    <footer>
-      <p>2004-2024 nachopro</p>
-    </footer>
-
-  </body>
-</html>
+{% endblock %}

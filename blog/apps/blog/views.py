@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import Http404
 
 from .models import Post
 
@@ -15,8 +16,16 @@ def index(request):
 
 
 def post_detail(request, slug):
-    post = Post.objects_active.get(slug=slug)
+    try:
+        post = Post.objects_active.get(slug=slug)
+
+    except Post.DoesNotExist:
+        raise Http404
+
     return render(
         request,
-        'blog/post.html'
+        'blog/post.html',
+        {
+            'article': post
+        }
     )
