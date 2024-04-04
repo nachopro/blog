@@ -1,0 +1,13 @@
+
+services:
+  web:
+    build: .
+    restart: always
+    env_file: ./blog/.env
+    volumes:
+      - sqlite:/opt/sqlite
+    ports:
+      - '8000:8000'
+
+volumes:
+  sqlite:

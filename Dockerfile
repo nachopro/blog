@@ -5,7 +5,8 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 ENV PYTHONUNBUFFERED 1
 
 RUN apk update && apk upgrade && apk add --no-cache \
-    bash
+    bash \
+    curl
 
 RUN python -m venv $VIRTUAL_ENV && pip install --upgrade pip
 
