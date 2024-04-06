@@ -15,10 +15,11 @@ RUN pip install --no-cache-dir -r prod.txt
 
 WORKDIR /opt/app
 COPY blog/ ./
-COPY entrypoint.sh ./
+
+COPY app ./
+RUN chmod +x app
+
+ENTRYPOINT ["./app"]
 
 EXPOSE 8000
-
-RUN chmod +x entrypoint.sh
-
-ENTRYPOINT ["./entrypoint.sh"]
+CMD ["run"]

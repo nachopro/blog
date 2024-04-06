@@ -5,7 +5,7 @@
 {% block main %}
       {% for article in articles %}
       <article>
-        <h2>{{ article.title }}i</h2>
+        <h2>{{ article.title }}</h2>
         <p>{{ article.created_at }}</p>
         <p>{{ article.content }}</p>
         <a href="/{{ article.slug }}/">Leer más</a>
