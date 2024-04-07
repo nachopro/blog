@@ -18,6 +18,7 @@ class BaseModel(models.Model):
 class Post(BaseModel):
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50, unique=True)
+    description = models.TextField()
     content = models.TextField()
 
     objects = models.Manager()
