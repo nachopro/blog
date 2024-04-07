@@ -7,8 +7,8 @@
       <article>
         <h2>{{ article.title }}</h2>
         <p>{{ article.created_at }}</p>
-        <p>{{ article.content }}</p>
-        <a href="/{{ article.slug }}/">Leer más</a>
+        <p>{{ article.description }}</p>
+        <a href="{% url 'blog-post' article.slug %}">Leer más</a>
       </article>
       {% endfor %}
 {% endblock %}
